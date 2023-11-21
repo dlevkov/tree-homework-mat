@@ -1,21 +1,20 @@
 // import required packages
-import 'zone.js';
-import { Component } from '@angular/core';
-import { bootstrapApplication } from '@angular/platform-browser';
+import "zone.js";
+import { Component } from "@angular/core";
+import { bootstrapApplication } from "@angular/platform-browser";
+import { MatTreeModule } from "@angular/material/tree";
 
 // describe component
 @Component({
-  selector: 'add-one-button', // component name used in markup
-  standalone: true, // component is self-contained
-  template: // the component's markup
-  `
-   <button (click)="count = count + 1">Add one</button> {{ count }}
-  `,
+  selector: "tree",
+  standalone: true,
+  templateUrl: "./tree.html",
+  imports: [MatTreeModule],
 })
 
 // export component
-export class AddOneButtonComponent {
+export class TreeComponent {
   count = 0;
 }
 
-bootstrapApplication(AddOneButtonComponent);
+bootstrapApplication(TreeComponent);
